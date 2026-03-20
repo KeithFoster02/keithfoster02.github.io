@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f172a; /* Warna background gelap modern */
+    color: #f8fafc;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Tipografi & Warna Utama */
+.highlight { color: #38bdf8; }
+.logo span { color: #38bdf8; }
+h1, h2, h3 { color: #f1f5f9; }
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: #38bdf8; }
+
+/* Tombol Burger untuk HP */
+.burger { display: none; cursor: pointer; }
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #f8fafc;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Tata Letak Bagian (Sections) */
+section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Tombol Umum */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover { 
+    background-color: #0ea5e9; 
+    transform: translateY(-3px);
+}
+
+/* Beranda (Hero) */
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2rem; }
+
+/* Tentang Saya */
+.about h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #38bdf8; }
+.about p { max-width: 800px; font-size: 1.1rem; color: #cbd5e1; }
+
+/* Proyek (Menggunakan CSS Grid) */
+.projects { background-color: #1e293b; }
+.projects h2 { font-size: 2.5rem; margin-bottom: 3rem; color: #38bdf8; }
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+.project-card {
+    background: #0f172a;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.project-card:hover { transform: translateY(-10px); }
+.project-card i { font-size: 3rem; color: #38bdf8; margin-bottom: 1.5rem; }
+.project-card h3 { margin-bottom: 1rem; }
+.project-card p { color: #94a3b8; font-size: 0.95rem; }
+
+/* Kontak & Footer */
+.contact h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #38bdf8;}
+.contact p { margin-bottom: 2rem; color: #cbd5e1; font-size: 1.1rem; }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+}
+
+/* --- RESPONSIVITAS HP (MEDIA QUERIES) --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 90vh;
+        top: 10vh;
+        background-color: rgba(15, 23, 42, 0.98);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li { opacity: 0; margin: 20px 0; }
+    .burger { display: block; }
+    
+    .nav-active { transform: translateX(0%); }
+    
+    @keyframes navLinkFade {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    /* Animasi silang pada tombol burger */
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
+    .hero h1 { font-size: 2.5rem; }
+    section { padding: 80px 5%; }
+}
