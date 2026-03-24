@@ -15,15 +15,14 @@ body {
     overflow-x: hidden;
 }
 
-/* Tipografi & Warna Utama */
 .highlight { color: #38bdf8; }
 .logo span { color: #38bdf8; }
 h1, h2, h3 { color: #f1f5f9; }
 
-/* Navigasi */
+/* --- NAVIGASI --- */
 nav {
     display: flex;
-    justify-content: space-between; /* Membuat logo di kiri, menu di kanan */
+    justify-content: space-between;
     align-items: center;
     min-height: 10vh;
     background-color: rgba(15, 23, 42, 0.9);
@@ -32,14 +31,12 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 0 8%; /* Memberi jarak di pinggir kiri dan kanan */
+    padding: 0 8%; 
 }
 
-/* Pengaturan Logo & Ikon Baru */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -48,15 +45,18 @@ nav {
 .logo i {
     color: #38bdf8;
     font-size: 1.6rem;
+    margin-right: 10px;
 }
 
-/* Pengaturan Menu di Desktop (Lebih Renggang) */
+/* Menu di Desktop */
 .nav-links {
     display: flex;
-    justify-content: center;
-    gap: 3rem; /* Memberikan jarak antar teks menu */
-    width: auto;
     list-style: none;
+}
+
+/* Memberi jarak pasti antar teks menu di desktop */
+.nav-links li {
+    margin-left: 40px; 
 }
 
 .nav-links a {
@@ -69,7 +69,7 @@ nav {
 
 .nav-links a:hover { color: #38bdf8; }
 
-/* Tombol Burger disembunyikan di Desktop */
+/* Sembunyikan tombol burger di Desktop */
 .burger { 
     display: none; 
     cursor: pointer; 
@@ -82,7 +82,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Tata Letak Bagian (Sections) */
+/* --- TATA LETAK HALAMAN --- */
 section {
     padding: 100px 10%;
     min-height: 100vh;
@@ -93,7 +93,6 @@ section {
     text-align: center;
 }
 
-/* Tombol Umum */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -105,20 +104,14 @@ section {
     margin-top: 20px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-.btn:hover { 
-    background-color: #0ea5e9; 
-    transform: translateY(-3px);
-}
+.btn:hover { background-color: #0ea5e9; transform: translateY(-3px); }
 
-/* Beranda (Hero) */
 .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
 .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2rem; }
 
-/* Tentang Saya */
 .about h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #38bdf8; }
 .about p { max-width: 800px; font-size: 1.1rem; color: #cbd5e1; }
 
-/* Proyek */
 .projects { background-color: #1e293b; }
 .projects h2 { font-size: 2.5rem; margin-bottom: 3rem; color: #38bdf8; }
 .project-grid {
@@ -139,18 +132,12 @@ section {
 .project-card h3 { margin-bottom: 1rem; }
 .project-card p { color: #94a3b8; font-size: 0.95rem; }
 
-/* Kontak & Footer */
 .contact h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #38bdf8;}
 .contact p { margin-bottom: 2rem; color: #cbd5e1; font-size: 1.1rem; }
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #0f172a;
-    color: #64748b;
-    border-top: 1px solid #1e293b;
-}
+footer { text-align: center; padding: 20px; background-color: #0f172a; color: #64748b; border-top: 1px solid #1e293b; }
 
-/* --- RESPONSIVITAS HP (MEDIA QUERIES) --- */
+
+/* --- RESPONSIVITAS KHUSUS HP --- */
 @media screen and (max-width: 768px) {
     nav { padding: 0 5%; }
     
@@ -165,32 +152,4 @@ footer {
         align-items: center;
         justify-content: center;
         width: 100%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-    
-    .nav-links li { 
-        opacity: 0; 
-        margin: 12px 0; 
-    }
-
-    .nav-links a {
-        font-size: 1.25rem; 
-    }
-    
-    .burger { display: block; }
-    
-    .nav-active { transform: translateX(0%); }
-    
-    @keyframes navLinkFade {
-        from { opacity: 0; transform: translateX(50px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-    
-    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
-    .toggle .line2 { opacity: 0; }
-    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
-
-    .hero h1 { font-size: 2.5rem; }
-    section { padding: 80px 5%; }
-}
+        transform: translateX
