@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    --bg-main: #ffffff;
-    --bg-alt: #f8fafc;
-    --nav-bg: rgba(255, 255, 255, 0.95);
-    --text-main: #334155;
-    --text-muted: #64748b;
-    --text-heading: #0f172a;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --btn-text: #ffffff;
-    --border: #e2e8f0;
-    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --bg-main: #121212;
+    --bg-alt: #1e1e1e;
+    --nav-bg: rgba(18, 18, 18, 0.9);
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --text-heading: #ffffff;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --btn-text: #000000;
+    --border: #2d2d2d;
+    --shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 * {
