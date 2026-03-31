@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #0f172a; 
+    background-color: #0f172a;
     color: #f8fafc;
     line-height: 1.6;
     overflow-x: hidden;
@@ -19,10 +19,9 @@ body {
 .logo span { color: #38bdf8; }
 h1, h2, h3 { color: #f1f5f9; }
 
-/* --- NAVIGASI --- */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     min-height: 10vh;
     background-color: rgba(15, 23, 42, 0.9);
@@ -31,32 +30,19 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 0 8%; 
 }
 
 .logo {
-    display: flex;
-    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
-.logo i {
-    color: #38bdf8;
-    font-size: 1.6rem;
-    margin-right: 10px;
-}
-
-/* Menu di Desktop */
 .nav-links {
     display: flex;
+    justify-content: space-around;
+    width: 35%;
     list-style: none;
-}
-
-/* Memberi jarak pasti antar teks menu di desktop */
-.nav-links li {
-    margin-left: 40px; 
 }
 
 .nav-links a {
@@ -69,11 +55,7 @@ nav {
 
 .nav-links a:hover { color: #38bdf8; }
 
-/* Sembunyikan tombol burger di Desktop */
-.burger { 
-    display: none; 
-    cursor: pointer; 
-}
+.burger { display: none; cursor: pointer; }
 .burger div {
     width: 25px;
     height: 3px;
@@ -82,7 +64,6 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* --- TATA LETAK HALAMAN --- */
 section {
     padding: 100px 10%;
     min-height: 100vh;
@@ -104,7 +85,10 @@ section {
     margin-top: 20px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-.btn:hover { background-color: #0ea5e9; transform: translateY(-3px); }
+.btn:hover { 
+    background-color: #0ea5e9; 
+    transform: translateY(-3px);
+}
 
 .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
 .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2rem; }
@@ -134,13 +118,15 @@ section {
 
 .contact h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #38bdf8;}
 .contact p { margin-bottom: 2rem; color: #cbd5e1; font-size: 1.1rem; }
-footer { text-align: center; padding: 20px; background-color: #0f172a; color: #64748b; border-top: 1px solid #1e293b; }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+}
 
-
-/* --- RESPONSIVITAS KHUSUS HP --- */
 @media screen and (max-width: 768px) {
-    nav { padding: 0 5%; }
-    
     .nav-links {
         position: absolute;
         right: 0px;
@@ -150,6 +136,69 @@ footer { text-align: center; padding: 20px; background-color: #0f172a; color: #6
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         width: 100%;
-        transform: translateX
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li { opacity: 0; margin: 20px 0; }
+    .burger { display: block; }
+    
+    .nav-active { transform: translateX(0%); }
+    
+    @keyframes navLinkFade {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
+    .hero h1 { font-size: 2.5rem; }
+    section { padding: 80px 5%; }
+}
+
+.contact-section {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 12px;              
+    margin-top: 20px;
+}
+
+.btn-main, .btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;            
+    text-decoration: none;
+    border-radius: 8px;      
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-main {
+    background-color: #007bff;
+    color: white;
+    padding: 0 25px;
+    font-size: 15px;
+}
+
+.btn-social {
+    width: 45px;
+    font-size: 20px;
+}
+
+.btn-main:hover { background-color: #0056b3; transform: translateY(-2px); }
+
+.ig { border: 2px solid #E1306C; color: #E1306C; }
+.ig:hover { background-color: #E1306C; color: white; }
+
+.discord { border: 2px solid #5865F2; color: #5865F2; }
+.discord:hover { background-color: #5865F2; color: white; }
