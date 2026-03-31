@@ -4,10 +4,8 @@ const navSlide = () => {
     const navLinks = document.querySelectorAll('.nav-links li');
 
     burger.addEventListener('click', () => {
-        // Membuka & menutup navigasi
         nav.classList.toggle('nav-active');
 
-        // Animasi teks menu yang muncul bergantian
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
@@ -16,10 +14,8 @@ const navSlide = () => {
             }
         });
 
-        // Mengubah ikon burger menjadi silang (X)
         burger.classList.toggle('toggle');
     });
 }
 
-// Menjalankan fungsi saat website dimuat
 navSlide();
